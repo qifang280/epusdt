@@ -16,7 +16,7 @@ import (
 
 const QueueOrderCallback = "order:callback"
 
-func NewOrderCallbackQueue(order *mdb.Orders) (*asynq.Task, error) {
+func NewOrderCallbackQueue(order *mdb.Ordersx) (*asynq.Task, error) {
 	payload, err := json.Cjson.Marshal(order)
 	if err != nil {
 		return nil, err
@@ -25,7 +25,7 @@ func NewOrderCallbackQueue(order *mdb.Orders) (*asynq.Task, error) {
 }
 
 func OrderCallbackHandle(ctx context.Context, t *asynq.Task) error {
-	var order mdb.Orders
+	var order mdb.Ordersx
 	err := json.Cjson.Unmarshal(t.Payload(), &order)
 	if err != nil {
 		return err

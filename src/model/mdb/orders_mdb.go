@@ -8,7 +8,7 @@ const (
 	CallBackConfirmNo = 2
 )
 
-type Orders struct {
+type Ordersx struct {
 	TradeId            string  `gorm:"column:trade_id" json:"trade_id"`                         //  epusdt订单号
 	OrderId            string  `gorm:"column:order_id" json:"order_id"`                         //  客户交易id
 	BlockTransactionId string  `gorm:"column:block_transaction_id" json:"block_transaction_id"` // 区块id
@@ -24,6 +24,6 @@ type Orders struct {
 }
 
 // TableName sets the insert table name for this struct type
-func (o *Orders) TableName() string {
+func (o *Ordersx) TableName() string {
 	return "orders"
 }

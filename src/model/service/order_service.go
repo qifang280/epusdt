@@ -71,7 +71,7 @@ func CreateTransaction(req *request.CreateTransactionRequest) (*response.CreateT
 		return nil, constant.NotAvailableAmountErr
 	}
 	tx := dao.Mdb.Begin()
-	order := &mdb.Orders{
+	order := &mdb.Ordersx{
 		TradeId:      GenerateCode(),
 		OrderId:      req.OrderId,
 		Amount:       req.Amount,
@@ -182,7 +182,7 @@ func GenerateCode() string {
 }
 
 // GetOrderInfoByTradeId 通过交易号获取订单
-func GetOrderInfoByTradeId(tradeId string) (*mdb.Orders, error) {
+func GetOrderInfoByTradeId(tradeId string) (*mdb.Ordersx, error) {
 	order, err := data.GetOrderInfoByTradeId(tradeId)
 	if err != nil {
 		return nil, err

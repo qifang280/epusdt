@@ -1,5 +1,5 @@
 -- auto-generated definition
-create table orders
+create table ordersx
 (
     id                   int auto_increment
         primary key,
@@ -24,7 +24,7 @@ create table orders
 );
 
 create index orders_block_transaction_id_index
-    on orders (block_transaction_id);
+    on ordersx (block_transaction_id);
 
 -- auto-generated definition
 create table wallet_address
